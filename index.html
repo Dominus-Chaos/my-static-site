@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Recipe Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Digital Recipe Book</h1>
+    </header>
+    <main>
+        <section id="recipes">
+            <article id="recipe1">
+                <h2>Mash Potatoes</h2>
+                <div id="recipe-details1">
+                    <p>Recipe for the Potatoe</p>
+                </div>
+                <ul id="ingredients1" style="display:none;">
+                    <li>10 Potatoe</li>
+                    <li>1/8 cup butter</li>
+                    <li>1 cup milk</li>
+                    <li>1/2 cup granulated sugar</li>
+                    <li>1 cup cream cheese</li>
+                    <li>1 teaspoon salt</li>
+                    <li>2 cloves of garlic</li>
+                    <li>finely chopped chives</li>
+                </ul>
+                <button onclick="toggleContent('recipe1')">Show Ingredients</button>
+            </article>
+        </section>
+    </main>
+    
+    <script>function toggleContent(recipeId) {
+        var details = document.getElementById('recipe-details' + recipeId.slice(-1)); 
+        var ingredients = document.getElementById('ingredients' + recipeId.slice(-1)); 
+        var button = document.querySelector('#' + recipeId + ' button');
+    
+        if (ingredients.style.display === 'none') {
+            ingredients.style.display = 'block';
+            details.style.display = 'none';
+            button.textContent = 'Show Recipe';
+        } else {
+            ingredients.style.display = 'none';
+            details.style.display = 'block';
+            button.textContent = 'Show Ingredients';
+        }
+    }</script>
+</body>
+</html>
